@@ -7,24 +7,25 @@ use Illuminate\View\Component;
 
 class sidebar extends Component
 {
-  /**
-   * Create a new component instance.
-   *
-   * @return void
-   */
-  public function __construct()
-  {
-    //
-  }
+    /**
+     * Create a new component instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        //
+    }
 
-  /**
-   * Get the view / contents that represent the component.
-   *
-   * @return \Illuminate\Contracts\View\View|string
-   */
-  public function render()
-  {
-    $menus = Menu::orderBy('sequence_number')->get();
-    return view('components.sbadmin.sidebar', compact("menus"));
-  }
+    /**
+     * Get the view / contents that represent the component.
+     *
+     * @return \Illuminate\Contracts\View\View|string
+     */
+    public function render()
+    {
+        $menus = Menu::orderBy('sequence_number')->get();
+        dd($menus);
+        return view('components.sbadmin.sidebar', compact("menus"));
+    }
 }
