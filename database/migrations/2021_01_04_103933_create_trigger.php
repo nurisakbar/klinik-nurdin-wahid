@@ -6,18 +6,18 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateTrigger extends Migration
 {
-  /**
-   * Run the migrations.
-   *
-   * @return void
-   */
-  public function up()
-  {
-    \Illuminate\Support\Facades\DB::unprepared('CREATE TRIGGER increase_stock AFTER DELETE ON obat_pendaftaran
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        \Illuminate\Support\Facades\DB::unprepared('CREATE TRIGGER increase_stock AFTER DELETE ON obat_pendaftaran
       FOR EACH ROW
       UPDATE obats SET stock = stock  + OLD.quantity WHERE id = OLD.obat_id
       ');
-    \Illuminate\Support\Facades\DB::unprepared('CREATE TRIGGER update_stock AFTER UPDATE ON obat_pendaftaran
+        \Illuminate\Support\Facades\DB::unprepared('CREATE TRIGGER update_stock AFTER UPDATE ON obat_pendaftaran
       FOR EACH ROW
       IF NEW.status = 1
         THEN 
@@ -35,14 +35,14 @@ class CreateTrigger extends Migration
           THEN UPDATE obats SET stock = stock  + OLD.quantity WHERE id = OLD.obat_id;
         END IF;
       END IF');
-  }
+    }
 
-  /**
-   * Reverse the migrations.
-   *
-   * @return void
-   */
-  public function down()
-  {
-  }
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+    }
 }

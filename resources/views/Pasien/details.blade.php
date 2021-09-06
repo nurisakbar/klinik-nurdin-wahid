@@ -9,7 +9,7 @@
   </x-slot>
   <div>
     <div class="row justify-content-center">
-      <div class="col-md-8 mb-4 ">
+      <div class="col-md-12 mb-4 ">
         <div class="mw-100" id="printThis">
           <!-- Heading -->
           <h4 class="d-flex justify-content-between align-items-center mb-3">
