@@ -18,16 +18,10 @@
       <span>Dashboard</span></a>
   </li>
 
-  <li class="nav-item">
-    <a class="nav-link" href="index.html">
-      <i class="fas fa-fw fa-tachometer-alt"></i>
-      <span>{{$nama}}</span></a>
-  </li>
-
   <!-- Divider -->
   <hr class="sidebar-divider">
 
-  @foreach($menus as $menu)
+  @foreach(\App\Models\Menu\Menu::orderBy('sequence_number')->get() as $menu)
   <!-- Heading -->
   @if(count($menu->navigations)>0)
   <div class="sidebar-heading">
