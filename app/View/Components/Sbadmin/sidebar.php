@@ -25,6 +25,7 @@ class sidebar extends Component
     public function render()
     {
         $menus = Menu::orderBy('sequence_number')->get();
-        return view('components.sbadmin.sidebar', compact("menus"));
+        $nama = "nuris akbar";
+        return view('components.sbadmin.sidebar', compact("menus", "nama"));
     }
 }
