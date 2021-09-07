@@ -21,7 +21,7 @@
   <!-- Divider -->
   <hr class="sidebar-divider">
 
-  @foreach(\App\Models\Menu\Menu::orderBy('sequence_number')->get() as $menu)
+  @foreach(\App\Models\Menu::orderBy('sequence_number')->get() as $menu)
   <!-- Heading -->
   @if(count($menu->navigations)>0)
   <div class="sidebar-heading">
